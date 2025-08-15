@@ -9,7 +9,6 @@ import (
 
 type Counter interface {
 	Add(id string)
-	Get(id string) uint64
 }
 
 type Storage interface {

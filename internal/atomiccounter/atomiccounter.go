@@ -31,28 +31,11 @@ func (c *AtomicCounter) Add(id string) {
 		c.mu.Unlock()
 		return
 	}
-	
+
 	cntPtr := new(uint64)
 	c.counters[id] = cntPtr
 	atomic.AddUint64(cntPtr, 1)
 	c.mu.Unlock()
-}
-
-func (c *AtomicCounter) Get(id string) uint64 {
-	c.mu.RLock()
-	defer c.mu.RUnlock()
-	if cntPtr, exists := c.counters[id]; exists {
-		return atomic.LoadUint64(cntPtr)
-	}
-	return 0
-}
-
-func (c *AtomicCounter) Reset() {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	for k := range c.counters {
-		delete(c.counters, k)
-	}
 }
 
 func (c *AtomicCounter) GetAndReset() map[string]uint64 {
