@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  run:
+    dotenv: ['.env']
+    cmds:
+      - go run cmd/main.go
+
+  build:
+    cmds:
+      - docker build -t bannercounter:latest -f ./Dockerfile .
