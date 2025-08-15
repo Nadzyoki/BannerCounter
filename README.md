@@ -2,6 +2,7 @@
 ![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?logo=go&logoColor=white)
 ![fasthttp](https://img.shields.io/badge/fasthttp-fast-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-336791?logo=postgresql&logoColor=white)
+![rps](https://img.shields.io/badge/rps-1000+-red)
 
 BannerCounter — это сервис для подсчёта и получения статистики показов баннеров по минутам.
 
