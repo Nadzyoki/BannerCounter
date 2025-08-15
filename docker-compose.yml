@@ -17,6 +17,8 @@ services:
     ports:
       - "5454:5454"
     environment:
+      - INTERVAL=5s
+      - LISTEN_PORT=5454
       - HOST=postgres
       - PORT=5432
       - USER=postgres
